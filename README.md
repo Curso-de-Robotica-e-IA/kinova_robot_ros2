@@ -70,14 +70,14 @@ To build this repository from source or contribute back to the repository read o
 
 2. Create a new ROS2 workspace:
    ```
-   export COLCON_WS=~/workspace/ros2_kortex_ws
+   export COLCON_WS=/app/workspace/ros2_kortex_ws
    mkdir -p $COLCON_WS/src
    ```
 
 3. Pull relevant packages:
    ```
    cd $COLCON_WS
-   git clone https://github.com/Kinovarobotics/ros2_kortex.git src/ros2_kortex -b jazzy
+   git clone https://github.com/jefferson-norberto2/ros2_kortex_gen3_lite.git -b jazzy
    vcs import src --skip-existing --input src/ros2_kortex/ros2_kortex.$ROS_DISTRO.repos
    vcs import src --skip-existing --input src/ros2_kortex/ros2_kortex-not-released.$ROS_DISTRO.repos
    ```
@@ -105,7 +105,7 @@ To build this repository from source or contribute back to the repository read o
    ```
 6. Source the previously built workspace using the following command:
    ```
-   echo 'source ~/workspace/ros2_kortex_ws/install/setup.bash' >> ~/.bashrc
+   echo 'source /app/workspace/ros2_kortex_ws/install/setup.bash' >> ~/.bashrc
    ```
 
 ## Simulation Issues
