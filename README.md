@@ -77,7 +77,7 @@ To build this repository from source or contribute back to the repository read o
 3. Pull relevant packages:
    ```
    cd $COLCON_WS
-   git clone https://github.com/Kinovarobotics/ros2_kortex.git src/ros2_kortex
+   git clone https://github.com/Kinovarobotics/ros2_kortex.git src/ros2_kortex b jazzy
    vcs import src --skip-existing --input src/ros2_kortex/ros2_kortex.$ROS_DISTRO.repos
    vcs import src --skip-existing --input src/ros2_kortex/ros2_kortex-not-released.$ROS_DISTRO.repos
    ```
