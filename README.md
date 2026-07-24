@@ -53,9 +53,12 @@ ROS2 Kortex is the official ROS2 package to interact with KINOVA KORTEX™ and i
    Latest LTS Release: [Install ROS2 Jazzy](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html)</br>
 
    After installing ROS2, source the setup.bash, which will set the `$ROS_DISTRO` environment variable.
+   ```bash
+   source /opt/ros/jazzy/setup.bash
+   ```
 
 2. If you plan to use MoveIt, it is recommended to install and use Cyclone DDS.
-   ```
+   ```bash
    sudo apt install ros-$ROS_DISTRO-rmw-cyclonedds-cpp
    export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
    ```
@@ -64,27 +67,27 @@ ROS2 Kortex is the official ROS2 package to interact with KINOVA KORTEX™ and i
 To build this repository from source or contribute back to the repository read on.
 
 1. Make sure that `colcon`, its extensions, and `vcs` are installed:
-   ```
+   ```bash
    sudo apt install python3-colcon-common-extensions python3-vcstool
    ```
 
 2. Create a new ROS2 workspace:
-   ```
+   ```bash
    export COLCON_WS=/app/workspace/ros2_kortex_ws
    mkdir -p $COLCON_WS/src
    ```
 
 3. Pull relevant packages:
-   ```
+   ```bash
    cd $COLCON_WS
-   git clone https://github.com/jefferson-norberto2/ros2_kortex_gen3_lite.git -b jazzy
+   git clone https://github.com/Curso-de-Robotica-e-IA/kinova_robot_ros2.git -b jazzy
    vcs import src --skip-existing --input src/ros2_kortex/ros2_kortex.$ROS_DISTRO.repos
    vcs import src --skip-existing --input src/ros2_kortex/ros2_kortex-not-released.$ROS_DISTRO.repos
    ```
 
    If you plan on simulating the robot with Gazebo, make sure to pull the additional simulation packages.
    If you're on ROS 2 Jazzy, run
-   ```
+   ```bash
    vcs import src --skip-existing --input src/ros2_kortex/simulation.jazzy.repos
    ```
 
@@ -94,20 +97,20 @@ To build this repository from source or contribute back to the repository read o
 4. Follow the instructions to install [Gazebo Harmonic](https://gazebosim.org/docs/harmonic/getstarted/)
 
 5. Install dependencies, compile, and source the workspace:
-   ```
+   ```bash
    rosdep install --ignore-src --from-paths src -y -r
    colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
    ```
 
    By default, colcon will use as much resources as possible to build the ROS2 workspace. This can temporarily freeze or even crash your machine. You can limit the number of threads used to avoid this issue, we found a good tradeoff between build time and resource utilisation by setting it to 3 :
-   ```
+   ```bash
    colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release --parallel-workers 3
    ```
 6. Source the previously built workspace using the following command:
-   ```
+   ```bash
    echo 'source /app/workspace/ros2_kortex_ws/install/setup.bash' >> ~/.bashrc
    ```
-
+  
 ## Simulation Issues
 
 Please note, at this time there are two known issues you with simulation
@@ -136,7 +139,7 @@ If errors are encounter you must clean your workspace and run colcon build in tw
 1. build everything except kortex related packages
 2. build the packages that where skipped
 
-```
+```bash
 sudo apt install python3-colcon-clean # if you don't have colcon-clean installed already
 colcon clean workspace -y
 colcon build --packages-skip-regex '.*kortex.*' '.*gen3.*'
