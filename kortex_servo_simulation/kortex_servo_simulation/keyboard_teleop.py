@@ -12,7 +12,7 @@ import tty
 
 import rclpy
 from rclpy.node import Node
-from geometry_msgs.msg import TwistStamped
+from geometry_msgs.msg import Twist
 
 class KeyboardTeleop(Node):
     """
@@ -29,7 +29,7 @@ class KeyboardTeleop(Node):
         """Initializes the teleop node and its publisher."""
         super().__init__('keyboard_teleop')
         
-        self.publisher_ = self.create_publisher(TwistStamped, '/cmd_vel', 10)
+        self.publisher_ = self.create_publisher(Twist, '/cmd_vel', 10)
         
         self.speed = 0.05
         self.target_y = 0.0
@@ -104,9 +104,9 @@ class KeyboardTeleop(Node):
                     self.target_z = 0.0
 
                 # Construct and publish the Twist message
-                twist = TwistStamped()
-                twist.twist.linear.y = self.target_y
-                twist.twist.linear.z = self.target_z
+                twist = Twist()
+                twist.linear.y = self.target_y
+                twist.linear.z = self.target_z
                 self.publisher_.publish(twist)
 
         finally:

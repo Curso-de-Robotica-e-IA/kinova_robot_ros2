@@ -8,12 +8,12 @@ safe teleoperation.
 
 import rclpy
 from rclpy.node import Node
-from geometry_msgs.msg import TwistStamped
+from geometry_msgs.msg import TwistStamped, Twist
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from builtin_interfaces.msg import Duration
 from moveit_msgs.srv import ServoCommandType
 
-class ServoInterface(Node):
+class ServoAdapter(Node):
     """
     Interface node for controlling MoveIt Servo via TwistStamped messages.
     
@@ -27,7 +27,7 @@ class ServoInterface(Node):
 
     def __init__(self):
         """Initializes publishers, subscribers, and timers for the interface."""
-        super().__init__('servo_interface')
+        super().__init__('servo_adapter')
         
         self.trajectory_pub = self.create_publisher(
             JointTrajectory,
@@ -42,7 +42,7 @@ class ServoInterface(Node):
         )
         
         self.cmd_vel_sub = self.create_subscription(
-            TwistStamped,
+            Twist,
             '/cmd_vel',
             self.cmd_vel_callback,
             10
@@ -131,27 +131,29 @@ class ServoInterface(Node):
         except Exception as e:
             self.get_logger().error(f'Failed to activate Twist mode: {e}')
 
-    def cmd_vel_callback(self, msg: TwistStamped):
+    def cmd_vel_callback(self, msg: Twist):
         """
-        Callback for incoming TwistStamped messages.
+        Callback for incoming Twist messages.
         
         Args:
-            msg (TwistStamped): The velocity command from the teleop node.
+            msg (Twist): The velocity command from the teleop node.
         """
         # Only forward commands if the entire startup sequence is finished
         if not self.startup_completed:
             return
             
         # Update timestamp to current time before forwarding to Servo
-        msg.header.stamp = self.get_clock().now().to_msg()
-        msg.header.frame_id = self.frame_id
+        new_msg = TwistStamped()
+        new_msg.twist = msg
+        new_msg.header.stamp = self.get_clock().now().to_msg()
+        new_msg.header.frame_id = self.frame_id
         
-        self.servo_pub.publish(msg)
+        self.servo_pub.publish(new_msg)
 
 def main(args=None):
     """Entry point for the Servo Interface node."""
     rclpy.init(args=args)
-    node = ServoInterface()
+    node = ServoAdapter()
     
     try:
         rclpy.spin(node)

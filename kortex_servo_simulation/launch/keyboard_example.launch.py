@@ -16,8 +16,8 @@ def generate_launch_description():
 
     servo_adapter_node = Node(
         package=pkg_name,
-        executable='servo_interface',
-        name='servo_interface',
+        executable='servo_adapter',
+        name='servo_adapter',
         output='screen'
     )
 
