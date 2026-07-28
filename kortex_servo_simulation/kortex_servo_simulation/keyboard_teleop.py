@@ -49,8 +49,8 @@ class KeyboardTeleop(Node):
             Movement (Hold down):
             w: +Z (Up)
             s: -Z (Down)
-            a: -Y (Left)
-            d: +Y (Right)
+            a: +Y (Left)
+            d: -Y (Right)
             
             Speed:
             q: Increase speed (x1.1)
