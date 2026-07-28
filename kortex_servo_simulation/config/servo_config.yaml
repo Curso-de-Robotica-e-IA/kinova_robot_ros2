@@ -28,8 +28,6 @@ joint_command_in_topic: "servo_node/delta_joint_cmds"
 
 # Frames
 robot_link_command_frame: "base_link"
-ee_frame_name: "tool_frame"
-planning_frame: "base_link" 
 
 # MoveIt properties
 move_group_name: "arm" 
@@ -39,11 +37,8 @@ is_primary_planning_scene_monitor: false
 check_collisions: true
 collision_check_rate: 10.0
 check_octomap_collisions: false
-collision_check_type: "threshold_distance"
 self_collision_proximity_threshold: 0.01
 scene_collision_proximity_threshold: 0.02
-collision_distance_safety_factor: 1000.0
-min_allowable_collision_distance: 0.01
 
 # Singularity configuration
 lower_singularity_threshold: 50.0
