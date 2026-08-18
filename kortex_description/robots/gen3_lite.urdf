@@ -117,7 +117,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kortex_description/arms/gen3_lite/6dof/meshes/base_link.STL"/>
+        <mesh filename="package://kortex_description/arms/gen3_lite/6dof/meshes/base_link.stl"/>
       </geometry>
     </collision>
   </link>
@@ -142,7 +142,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kortex_description/arms/gen3_lite/6dof/meshes/shoulder_link.STL"/>
+        <mesh filename="package://kortex_description/arms/gen3_lite/6dof/meshes/shoulder_link.stl"/>
       </geometry>
     </collision>
   </link>
@@ -174,7 +174,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kortex_description/arms/gen3_lite/6dof/meshes/arm_link.STL"/>
+        <mesh filename="package://kortex_description/arms/gen3_lite/6dof/meshes/arm_link.stl"/>
       </geometry>
     </collision>
   </link>
@@ -206,7 +206,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kortex_description/arms/gen3_lite/6dof/meshes/forearm_link.STL"/>
+        <mesh filename="package://kortex_description/arms/gen3_lite/6dof/meshes/forearm_link.stl"/>
       </geometry>
     </collision>
   </link>
@@ -238,7 +238,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kortex_description/arms/gen3_lite/6dof/meshes/lower_wrist_link.STL"/>
+        <mesh filename="package://kortex_description/arms/gen3_lite/6dof/meshes/lower_wrist_link.stl"/>
       </geometry>
     </collision>
   </link>
@@ -270,7 +270,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kortex_description/arms/gen3_lite/6dof/meshes/upper_wrist_link.STL"/>
+        <mesh filename="package://kortex_description/arms/gen3_lite/6dof/meshes/upper_wrist_link.stl"/>
       </geometry>
     </collision>
   </link>
@@ -333,7 +333,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kortex_description/grippers/gen3_lite_2f/meshes/gripper_base_link.STL"/>
+        <mesh filename="package://kortex_description/grippers/gen3_lite_2f/meshes/gripper_base_link.stl"/>
       </geometry>
     </collision>
   </link>
@@ -358,7 +358,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kortex_description/grippers/gen3_lite_2f/meshes/right_finger_prox_link.STL"/>
+        <mesh filename="package://kortex_description/grippers/gen3_lite_2f/meshes/right_finger_prox_link.stl"/>
       </geometry>
     </collision>
   </link>
@@ -391,7 +391,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kortex_description/grippers/gen3_lite_2f/meshes/right_finger_dist_link.STL"/>
+        <mesh filename="package://kortex_description/grippers/gen3_lite_2f/meshes/right_finger_dist_link.stl"/>
       </geometry>
     </collision>
   </link>
@@ -425,7 +425,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kortex_description/grippers/gen3_lite_2f/meshes/left_finger_prox_link.STL"/>
+        <mesh filename="package://kortex_description/grippers/gen3_lite_2f/meshes/left_finger_prox_link.stl"/>
       </geometry>
     </collision>
   </link>
@@ -458,7 +458,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kortex_description/grippers/gen3_lite_2f/meshes/left_finger_dist_link.STL"/>
+        <mesh filename="package://kortex_description/grippers/gen3_lite_2f/meshes/left_finger_dist_link.stl"/>
       </geometry>
     </collision>
   </link>
