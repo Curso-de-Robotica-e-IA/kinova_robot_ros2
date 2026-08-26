@@ -35,7 +35,7 @@ RUN apt-get update && rosdep update && \
 
 RUN echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc && \
     echo "source ${COLCON_WS}/install/setup.bash" >> ~/.bashrc && \
-    echo 'alias gen3_simulation="ros2 launch kinova_gen3_lite_moveit_config robot.launch.py robot_ip:=xxx.yyy.zzz.www use_sim_time:=true"' >> ~/.bashrc && \
+    echo 'alias gen3_simulation="ros2 launch kortex_bringup kortex_sim_control.launch.py use_sim_time:=true launch_rviz:=false robot_type:=gen3_lite dof:=6 gripper:=gen3_lite_2f"' >> ~/.bashrc && \
     echo 'alias gen3_moveit_simulation="ros2 launch kinova_gen3_lite_moveit_config robot.launch.py robot_ip:=xxx.yyy.zzz.www use_sim_time:=true"' >> ~/.bashrc && \
     echo 'alias gen3_robot="ros2 launch kortex_bringup gen3_lite.launch.py robot_ip:=192.168.2.10"' >> ~/.bashrc && \
     echo 'alias gen3_moveit_robot="ros2 launch kinova_gen3_lite_moveit_config robot.launch.py robot_ip:=192.168.2.10 use_sim_time:=false"' >> ~/.bashrc && \
