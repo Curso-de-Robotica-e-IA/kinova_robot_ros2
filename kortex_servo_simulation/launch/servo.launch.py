@@ -38,8 +38,8 @@ def generate_launch_description():
     # 4. Define the Servo node, passing all configurations extracted by the builder
     servo_node = Node(
         package='moveit_servo',
-        executable='servo_node',
-        name='servo_node',
+        executable='servo_node_main', # <-- ALTERADO DE 'servo_node' PARA 'servo_node_main'
+        name='servo_node',            # O nome do nó pode continuar sendo 'servo_node', sem problemas
         parameters=[
             servo_params,
             moveit_config.robot_description,
