@@ -31,7 +31,7 @@ class KeyboardTeleop(Node):
         
         self.publisher_ = self.create_publisher(Twist, '/cmd_vel', 10)
         
-        self.speed = 0.05
+        self.speed = 1.0
         self.target_y = 0.0
         self.target_z = 0.0
 
@@ -78,16 +78,16 @@ class KeyboardTeleop(Node):
                 
                 # Logic map
                 if key == 'w':
-                    self.target_z = self.speed
+                    self.target_z = 0.01 * self.speed
                     self.target_y = 0.0
                 elif key == 's':
-                    self.target_z = -self.speed
+                    self.target_z = -0.01 * self.speed
                     self.target_y = 0.0
                 elif key == 'a':
-                    self.target_y = self.speed
+                    self.target_y = 0.01 * self.speed
                     self.target_z = 0.0
                 elif key == 'd':
-                    self.target_y = -self.speed
+                    self.target_y = -0.01 * self.speed
                     self.target_z = 0.0
                 elif key == 'q':
                     self.speed *= 1.1
