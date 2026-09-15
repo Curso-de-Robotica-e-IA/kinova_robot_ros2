@@ -101,7 +101,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="file://$(find kortex_description)/arms/gen3_lite/${dof}dof/meshes/base_link.STL" />
+          <mesh filename="file://$(find kortex_description)/arms/gen3_lite/${dof}dof/meshes/base_link.stl" />
         </geometry>
       </collision>
     </link>
@@ -126,7 +126,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="file://$(find kortex_description)/arms/gen3_lite/${dof}dof/meshes/shoulder_link.STL" />
+          <mesh filename="file://$(find kortex_description)/arms/gen3_lite/${dof}dof/meshes/shoulder_link.stl" />
         </geometry>
       </collision>
     </link>
@@ -158,7 +158,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="file://$(find kortex_description)/arms/gen3_lite/${dof}dof/meshes/arm_link.STL" />
+          <mesh filename="file://$(find kortex_description)/arms/gen3_lite/${dof}dof/meshes/arm_link.stl" />
         </geometry>
       </collision>
     </link>
@@ -190,7 +190,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="file://$(find kortex_description)/arms/gen3_lite/${dof}dof/meshes/forearm_link.STL" />
+          <mesh filename="file://$(find kortex_description)/arms/gen3_lite/${dof}dof/meshes/forearm_link.stl" />
         </geometry>
       </collision>
     </link>
@@ -222,7 +222,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="file://$(find kortex_description)/arms/gen3_lite/${dof}dof/meshes/lower_wrist_link.STL" />
+          <mesh filename="file://$(find kortex_description)/arms/gen3_lite/${dof}dof/meshes/lower_wrist_link.stl" />
         </geometry>
       </collision>
     </link>
@@ -254,7 +254,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="file://$(find kortex_description)/arms/gen3_lite/${dof}dof/meshes/upper_wrist_link.STL" />
+          <mesh filename="file://$(find kortex_description)/arms/gen3_lite/${dof}dof/meshes/upper_wrist_link.stl" />
         </geometry>
       </collision>
     </link>

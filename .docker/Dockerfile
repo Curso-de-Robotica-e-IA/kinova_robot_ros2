@@ -15,9 +15,14 @@ RUN apt-get update && apt-get install -y \
     ros-humble-moveit \
     ros-humble-moveit-servo \
     ros-humble-parameter-traits \
+    ros-humble-rosbridge-suite \
+    ros-humble-usb-cam \
+    ros-dev-tools \
     xterm \
     terminator \
-    tree
+    tree \
+    v4l-utils \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR ${COLCON_WS}
 
