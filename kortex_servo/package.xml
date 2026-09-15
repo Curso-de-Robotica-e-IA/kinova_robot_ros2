@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>kortex_servo_simulation</name>
+  <name>kortex_servo</name>
   <version>1.0.0</version>
-  <description>This package allow use moveit servo on kinova gen3 lite to send Twist commands to the Gazebo simulation.</description>
+  <description>This package allow use moveit servo on kinova gen3 lite to send Twist commands to the Gazebo simulation and control the robot.</description>
   <maintainer email="jmn@cin.ufpe.br">jefferson-norberto2</maintainer>
   <license>Apache-2.0</license>
 

@@ -2,7 +2,7 @@ import os
 from glob import glob
 from setuptools import find_packages, setup
 
-package_name = 'kortex_servo_simulation'
+package_name = 'kortex_servo'
 
 setup(
     name=package_name,

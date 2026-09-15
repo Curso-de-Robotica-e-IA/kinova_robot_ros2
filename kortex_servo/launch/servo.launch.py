@@ -25,7 +25,7 @@ def generate_launch_description():
 
     # 2. Load the servo configuration parameters
     servo_yaml_path = os.path.join(
-        get_package_share_directory('kortex_servo_simulation'),
+        get_package_share_directory('kortex_servo'),
         'config',
         'servo_config.yaml'
     )
@@ -38,8 +38,8 @@ def generate_launch_description():
     # 4. Define the Servo node, passing all configurations extracted by the builder
     servo_node = Node(
         package='moveit_servo',
-        executable='servo_node_main', # <-- ALTERADO DE 'servo_node' PARA 'servo_node_main'
-        name='servo_node',            # O nome do nó pode continuar sendo 'servo_node', sem problemas
+        executable='servo_node_main',
+        name='servo_node',
         parameters=[
             servo_params,
             moveit_config.robot_description,
