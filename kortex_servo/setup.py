@@ -24,8 +24,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'servo_adapter = kortex_servo_simulation.servo_adapter:main',
-            'keyboard_teleop = kortex_servo_simulation.keyboard_teleop:main',
+            'servo_adapter = kortex_servo.servo_adapter:main',
+            'keyboard_teleop = kortex_servo.keyboard_teleop:main',
         ],
     },
 )

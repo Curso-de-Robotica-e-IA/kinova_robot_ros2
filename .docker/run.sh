@@ -5,7 +5,7 @@ xhost +local:docker
 IMAGE_VERSION="1.1.1"
 
 docker run -d -it \
-  --name kortex_humble_${IMAGE_VERSION} \
+  --name kortex_humble \
   --gpus all \
   -e NVIDIA_DRIVER_CAPABILITIES=all \
   -e DISPLAY=$DISPLAY \
