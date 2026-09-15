@@ -12,7 +12,8 @@ RUN apt-get update && apt-get install -y \
     ros-humble-rmw-cyclonedds-cpp \
     python3-colcon-common-extensions \
     python3-vcstool \
-    ros-humble-moveit* \
+    ros-humble-moveit \
+    ros-humble-moveit-servo \
     ros-humble-parameter-traits \
     xterm \
     terminator \
@@ -22,7 +23,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR ${COLCON_WS}
 
 RUN mkdir -p src && \
-    git clone https://github.com/Curso-de-Robotica-e-IA/kinova_robot_ros2.git -b humble src/ros2_kortex && \
+    git clone https://github.com/Curso-de-Robotica-e-IA/kinova_robot_ros2.git -b feat/add-servo-node-humble src/ros2_kortex && \
     vcs import src --skip-existing --input src/ros2_kortex/ros2_kortex.humble.repos && \
     vcs import src --skip-existing --input src/ros2_kortex/ros2_kortex-not-released.humble.repos && \
     vcs import src --skip-existing --input src/ros2_kortex/simulation.humble.repos
