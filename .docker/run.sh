@@ -2,7 +2,7 @@
 xhost +local:docker
 
 # Define the version of the Docker image to use
-IMAGE_VERSION="1.1.1"
+IMAGE_VERSION="1.1.2"
 
 docker run -d -it \
   --name kortex_humble \
