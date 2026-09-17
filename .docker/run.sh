@@ -15,8 +15,8 @@ if ! [[ "$DOMAIN" =~ ^[0-9]+$ ]]; then
     exit 1
 fi
 
-if [ "$DOMAIN" -lt 102 ] || [ "$DOMAIN" -gt 214 ]; then
-    echo "Error: The ROS_DOMAIN_ID must be between 102 and 214."
+if [ "$DOMAIN" -gt 102 ] && [ "$DOMAIN" -lt 214 ]; then
+    echo "Error: The ROS_DOMAIN_ID can't be between 102 to 214."
     exit 1
 fi
 
