@@ -6,17 +6,27 @@ if [ -z "$BASH_VERSION" ]; then
 fi
 
 # Prompt the user for the ROS_DOMAIN_ID
-read -p "Type the ROS_DOMAIN_ID (a integer): " INPUT_DOMAIN
+read -p "Type the ROS_DOMAIN_ID (a integer, except 102 until 214, and lower than 233): " INPUT_DOMAIN
 DOMAIN=${INPUT_DOMAIN}
 
-# Validate that the input is an integer
+# Validate that the input is an integer and within the specified range
 if ! [[ "$DOMAIN" =~ ^[0-9]+$ ]]; then
     echo "Error: The ROS_DOMAIN_ID must be an integer."
     exit 1
 fi
 
-read -p "Type the ROS_IMAGE_VERSION (default is 1.3.3): " INPUT_VERSION
-IMAGE_VERSION=${INPUT_VERSION:-1.3.3}
+if [ "$DOMAIN" -lt 102 ] || [ "$DOMAIN" -gt 214 ]; then
+    echo "Error: The ROS_DOMAIN_ID must be between 102 and 214."
+    exit 1
+fi
+
+if [ "$DOMAIN" -ge 233 ]; then
+    echo "Error: The ROS_DOMAIN_ID must be lower than 233."
+    exit 1
+fi
+
+read -p "Type the ROS_IMAGE_VERSION (default is 1.4.3): " INPUT_VERSION
+IMAGE_VERSION=${INPUT_VERSION:-1.4.3}
 
 xhost +local:docker
 

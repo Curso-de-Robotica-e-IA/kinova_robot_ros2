@@ -2,7 +2,7 @@ FROM ros:humble
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-ENV COLCON_WS=/app/workspace/ros2_kortex_ws
+ENV COLCON_WS=/app/ros2_kortex_ws
 
 SHELL ["/bin/bash", "-c"]
 
