@@ -1,4 +1,4 @@
-FROM osrf/ros:humble-desktop-full
+FROM ros:humble
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
